@@ -1,0 +1,45 @@
+﻿@model ISRPO.MVCProject.Models.Shop
+@{
+    ViewData["Title"] = "Магазин";
+}
+
+<div class="card bg-light mb-3" style="max-width: 100%;">
+    <div class="card-header text-center">
+        Магазин "Арбузная"
+    </div>
+    <div class="card-body text-center">
+        @Html.ActionLink("Добавить покупателя", "GetCreate", "Customer")
+    </div>
+</div>
+<div class="card text-white bg-dark" style="max-width: 100%;">
+    <div class="card-header text-center">
+        Список покупателей 
+    </div>
+    <div class="card-body text-center">
+        @if (Model != null)
+        {
+
+            @if (Model.Customers.Any())
+            {
+                <div>
+                    @{
+                        Html.RenderPartial("Table", Model.Customers);
+                    }
+                </div>
+            }
+            else
+            {
+                <div class="card-body text-center">
+                    Покупателей не создано
+                </div>
+            }
+
+        }
+        else
+        {
+            <div class="card-body text-center">
+                Покупателей не создано
+            </div>
+        }
+    </div>
+</div>

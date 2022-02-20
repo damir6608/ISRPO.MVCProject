@@ -1,0 +1,34 @@
+﻿@model List<Customer>
+
+    <div class="container">
+        <table class="table table-striped text-white">
+            <thead>
+                <tr>
+                    <th>Имя</th>
+                    <th>Фамилия</th>
+                    <th>Отчество</th>
+                    <th>Адресс</th>
+                    <th>Кредитная карта</th>
+                    <th>Банковский счет</th>
+                    <th>Действия</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var m in Model)
+                {
+                <tr>
+                    <td>@m.Name</td>
+                    <td>@m.LastName</td>
+                    <td>@m.Patronymic</td>
+                    <td>@m.Adress</td>
+                    <td>@m.CardNumber</td>
+                    <td>@m.BankAccount</td>
+                    <td>
+                        @Html.ActionLink("Редактировать", "EditCustomer", "Customer", new {id = m.Id })
+                        @Html.ActionLink("Удалить", "DeleteCustomer", "Customer", new { id =m.Id})
+                    </td>
+</tr>
+                }
+            </tbody>
+        </table>
+    </div>

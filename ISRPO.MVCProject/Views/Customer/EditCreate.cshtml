@@ -1,0 +1,85 @@
+﻿@model Customer
+<div>
+    <h4 class="display-4">Профиль покупателя</h4>
+</div>
+
+@Html.ValidationSummary(false, "", new { @class = "text-danger" })
+@using (Html.BeginForm("CreateAndExit", "Customer"))
+{
+    <div class="card text-white " style="max-width: 100%;">
+
+        <div class="container">
+            <table class="table table-striped">
+                <thead>
+                    <col width="150">
+                    <col width="80">
+                    <col width="120">
+                    <tr>
+                        <th width="100px">
+                            ID
+                        </th>
+                        <td>
+                            @Html.EditorFor(m => m.Id)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th width="100px">
+                            @Html.LabelFor(m => m.Name)
+                        </th>
+                        <td>
+                            @Html.EditorFor(m => m.Name)
+                        </td>
+                    </tr>
+                    <br />
+                    <tr>
+                        <th width="100px">
+                            @Html.LabelFor(m => m.LastName)
+                        </th>
+                        <td>
+                            @Html.EditorFor(m => m.LastName)
+                        </td>
+                    </tr>
+                    <br />
+                    <tr>
+                        <th width="100px">
+                            @Html.LabelFor(m => m.Patronymic)
+                        </th>
+                        <td>
+                            @Html.EditorFor(m => m.Patronymic)
+                        </td>
+                    </tr>
+                    <br />
+                    <tr>
+                        <th width="100px">
+                            @Html.LabelFor(m => m.Adress)
+                        </th>
+                        <td>
+                            @Html.EditorFor(m => m.Adress)
+                        </td>
+                    </tr>
+                    <br />
+                    <tr>
+                        <th width="100px">
+                            @Html.LabelFor(m => m.CardNumber)
+                        </th>
+                        <td>
+                            @Html.EditorFor(m => m.CardNumber)
+                        </td>
+                    </tr>
+                    <br />
+                    <tr>
+                        <th width="100px">
+                            @Html.LabelFor(m => m.BankAccount)
+                        </th>
+                        <td>
+                            @Html.EditorFor(m => m.BankAccount)
+                        </td>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+    <div>
+        <input class="navbar-toggler" type="submit" value="Сохранить и выйти" />
+    </div>
+}

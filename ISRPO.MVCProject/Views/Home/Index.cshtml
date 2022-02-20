@@ -1,0 +1,30 @@
+﻿@model ISRPO.MVCProject.Models.Faktorial
+@{
+    ViewData["Title"] = "Лабораторная работа";
+}
+<div class="card bg-light mb-3" style="max-width: 100%;">
+    <div class="card-header text-center">
+        Здравствуйте примите лабу пожалуйста
+    </div>
+    <div class="card-body text-center">
+        Составить программу для расчета факториала натурального числа n
+    </div>
+</div>
+<div class="text-center">
+    @using (Html.BeginForm("Faktorial", "Home"))
+    {
+        @Html.LabelFor(l => l.n)
+        <label>&nbsp;</label>
+        @Html.TextBoxFor(m => m.n)
+        <div>
+            <input class="navbar-toggler" type="submit" value="Рассчитать" />
+        </div>
+    }
+        <div>
+            @Html.LabelFor(l => l.answer)
+            <label>&nbsp;</label>
+            @Html.DisplayFor(l => l.answer)
+        </div>
+
+
+</div>

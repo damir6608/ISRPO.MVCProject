@@ -1,0 +1,41 @@
+﻿@model ISRPO.MVCProject.Models.Students
+@{
+    ViewData["Title"] = "Студенты";
+}
+<div class="card bg-light mb-3" style="max-width: 100%;">
+    <div class="card-header text-center">
+        Здравствуйте примите лабу пожалуйста
+    </div>
+    <div class="card-body text-center">
+        Имеется список из десяти учащихся класса с указанием роста каждого из них. Выяснить, перечислены ли ученики в списке в порядке убывания их роста.
+    </div>
+</div>
+@using (Html.BeginForm("SecondTask", "Home"))
+{
+    <div class="card text-white " style="max-width: 100%;">
+
+        <div class="container">
+            <table class="table table-striped">
+                <thead>
+                    @for (int i = 0; i < 10; i++)
+                    {
+                        <tr>
+                            <td>
+                                <input size="40" name="Height" type="text" />
+                            </td>
+                        </tr>
+                    }
+                </thead>
+            </table>
+        </div>
+        <div>
+            <input class="navbar-toggler" type="submit" value="Проверить" />
+        </div>
+    </div>
+    <div>
+        @Html.DisplayFor(d => d.answer)
+    </div>
+
+
+
+}
